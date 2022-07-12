@@ -1,7 +1,6 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-
 import 'package:flutter_social_share/flutter_social_share.dart';
 
 void main() {
@@ -28,21 +27,17 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: const Text('Plugin example app'),
         ),
-        body: ListView(
-          children: [
-            TextButton(
-              child: const Text("Share on facebook"),
-              onPressed: () {
-                shareOnFacebook();
-              },
-            ),
-            TextButton(
-              child: const Text("Share on facebook2"),
-              onPressed: () {
-                // shareOnFacebook2();
-              },
-            ),
-          ],
+        body: Center(
+          child: ListView(
+            children: [
+              TextButton(
+                child: const Text("Share on facebook"),
+                onPressed: () {
+                  shareOnFacebook();
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -50,6 +45,26 @@ class _MyAppState extends State<MyApp> {
 
   void shareOnFacebook() async {
     await FlutterSocialShare.shareLinkToFacebook(
-        url: "https://www.google.com", quote: "captions");
+        url: "https://www.google.com",
+        quote: "captions",
+        onSuccess: onSuccess,
+        onCancel: onCancel,
+        onError: onError);
+  }
+
+  Future<void> onSuccess(String postId) {
+    log("onSuccess:" + postId);
+    return Future.value();
+  }
+
+  Future<void> onCancel() {
+    log("onCancel");
+    return Future.value();
+  }
+
+  Future<void> onError(String error) {
+    log("onSucconErroress:" + error);
+
+    return Future.value();
   }
 }

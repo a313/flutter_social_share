@@ -12,6 +12,7 @@ class FlutterSocialShare {
   static Future<void> shareLinkToFacebook({
     String? quote,
     String? url,
+    bool requiredApp = false,
     OnSuccess? onSuccess,
     OnCancel? onCancel,
     OnError? onError,
@@ -19,6 +20,7 @@ class FlutterSocialShare {
     final Map<String, dynamic> params = <String, dynamic>{
       "quote": quote,
       "url": url,
+      "requiredApp": requiredApp
     };
 
     _channel.setMethodCallHandler((call) {
