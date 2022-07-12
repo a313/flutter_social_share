@@ -28,13 +28,21 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: const Text('Plugin example app'),
         ),
-        body: Center(
-          child: TextButton(
-            child: const Text("Share on facebook"),
-            onPressed: () {
-              shareOnFacebook();
-            },
-          ),
+        body: ListView(
+          children: [
+            TextButton(
+              child: const Text("Share on facebook"),
+              onPressed: () {
+                shareOnFacebook();
+              },
+            ),
+            TextButton(
+              child: const Text("Share on facebook2"),
+              onPressed: () {
+                // shareOnFacebook2();
+              },
+            ),
+          ],
         ),
       ),
     );
