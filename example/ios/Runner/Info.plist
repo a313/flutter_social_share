@@ -43,5 +43,157 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>zaloapp.com</string>
+			<key>CFBundleURLSchemes</key>
+			<array/>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>vpbankonline</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>facebook</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb277797200431348</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>gooogle</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.17266123137-clql1dnuhp5pabjotgkiq2lml9kp533v</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.funtap.micro.investment</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.funtap.micro.investment</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>tikopurl</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.tikop</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>FacebookAppID</key>
+	<string>277797200431348</string>
+	<key>FacebookDisplayName</key>
+	<string>Tikop Invest</string>
+	<key>FacebookClientToken</key>
+	<string>26b2fe6ff781733d5c13bf609745018d</string>
+	<key>FirebaseAppDelegateProxyEnabled</key>
+	<true/>
+	<key>FirebaseDynamicLinksCustomDomains</key>
+	<array>
+		<string>https://link.tikop.vn</string>
+		<string>https://app.tikop.vn</string>
+		<string>https://tikop.vn</string>
+	</array>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fb-messenger-public</string>
+		<string>fb-messenger</string>
+		<string>zalo</string>
+		<string>fb</string>
+		<string>facebook-stories</string>
+		<string>tg</string>
+		<string>message</string>
+		<string>fbapi</string>
+		<string>fb-messenger-share-api</string>		
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
+		<string>fbapi</string>
+		<string>fbauth</string>
+		<string>fbapi20130214</string>
+		<string>fbapi20130410</string>
+		<string>fbapi20130702</string>
+		<string>fbapi20131010</string>
+		<string>fbapi20131219</string>
+		<string>fbapi20140410</string>
+		<string>fbapi20140116</string>
+		<string>fbapi20150313</string>
+		<string>fbapi20150629</string>
+		<string>instagram</string>
+		<string>instagram-stories</string>
+	</array>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>NSAdvertisingAttributionReportEndpoint</key>
+	<string>https://appsflyer-skadnetwork.com/</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Cho phép Tikop truy cập máy ảnh, để có thể chụp hình khi xác thực tài khoản</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>Face ID for Login</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Cho phép Tikop truy cập vị trí của bạn</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Cho phép Tikop truy cập vị trí của bạn</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Cho phép Tikop truy cập microphone, để có thể ghi âm</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Cho phép Tikop truy cập thư viện ảnh để lưu lại hình ảnh</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Vui lòng kích hoạt truy cập để có thể tải lên hình ảnh của bạn làm ảnh đại diện, thẻ căn cước cho thông tin tài khoản.</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>remote-notification</string>
+	</array>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+
 </dict>
 </plist>
