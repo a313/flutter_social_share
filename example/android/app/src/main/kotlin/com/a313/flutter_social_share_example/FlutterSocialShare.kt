@@ -4,6 +4,7 @@ import android.app.Activity
 import android.net.Uri
 import androidx.annotation.NonNull
 import com.facebook.CallbackManager
+import com.facebook.CallbackManager.Factory.create
 import com.facebook.FacebookCallback
 import com.facebook.FacebookException
 import com.facebook.share.Sharer
@@ -11,8 +12,10 @@ import com.facebook.share.model.ShareLinkContent
 import com.facebook.share.widget.ShareDialog
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
+import io.flutter.plugin.common.BinaryMessenger
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
+import io.flutter.plugin.common.PluginRegistry.Registrar
 
 class FlutterSocialShare : FlutterPlugin, MethodChannel.MethodCallHandler {
     /// The MethodChannel that will the communication between Flutter and native Android
@@ -23,8 +26,9 @@ class FlutterSocialShare : FlutterPlugin, MethodChannel.MethodCallHandler {
     lateinit var callbackManager: CallbackManager
     lateinit var activity: Activity
 
-    override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
-        channel = MethodChannel(flutterPluginBinding.binaryMessenger, "flutter_social_share")
+
+    override fun onAttachedToEngine(binding: FlutterPlugin.FlutterPluginBinding) {
+        channel = MethodChannel(binding.binaryMessenger, "flutter_social_share")
         channel.setMethodCallHandler(this)
         callbackManager = CallbackManager.Factory.create()
     }
@@ -33,7 +37,7 @@ class FlutterSocialShare : FlutterPlugin, MethodChannel.MethodCallHandler {
         if (call.method == "shareToFacebook") {
             val quote = call.argument<String>("quote")
             val url = call.argument<String>("url")
-            shareToFacebook(url!!, quote!!, result)
+            shareToFacebook(url, quote, result)
         }
     }
 
@@ -44,7 +48,7 @@ class FlutterSocialShare : FlutterPlugin, MethodChannel.MethodCallHandler {
      * @param msg    String
      * @param result Result
      */
-    private fun shareToFacebook(url: String, msg: String, result: MethodChannel.Result) {
+    private fun shareToFacebook(url: String?, msg: String?, result: MethodChannel.Result) {
         val shareDialog = ShareDialog(activity)
         // this part is optional
         shareDialog.registerCallback(
