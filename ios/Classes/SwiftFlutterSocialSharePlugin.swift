@@ -66,7 +66,7 @@ public class SwiftFlutterSocialSharePlugin: NSObject, FlutterPlugin, SharingDele
     }
     
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
-        if call.method == "shareToFacebook" {
+        if call.method == "shareLinkToFacebook" {
             if let arguments = call.arguments as? [String:Any] {
                 let shareQuote = arguments["quote"] as! String?
                 let shareUrl = arguments["url"] as! String?

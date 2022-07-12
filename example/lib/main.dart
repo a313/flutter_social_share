@@ -49,8 +49,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   void shareOnFacebook() async {
-    String? result = await FlutterSocialShare.shareToFacebook(
+    await FlutterSocialShare.shareLinkToFacebook(
         url: "https://www.google.com", quote: "captions");
-    log(result ?? "");
   }
 }

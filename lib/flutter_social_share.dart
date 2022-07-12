@@ -2,24 +2,37 @@ import 'dart:async';
 
 import 'package:flutter/services.dart';
 
+typedef OnCancel = Future<void> Function();
+typedef OnError = Future<void> Function(String error);
+typedef OnSuccess = Future<void> Function(String postId);
+
 class FlutterSocialShare {
   static const MethodChannel _channel = MethodChannel('flutter_social_share');
 
-  static Future<String?> get platformVersion async {
-    final String? version = await _channel.invokeMethod('getPlatformVersion');
-    return version;
-  }
-
-  static Future<String?> shareToFacebook(
-      {String? quote, String? url, String? imageName, String? imageUrl}) async {
+  static Future<void> shareLinkToFacebook({
+    String? quote,
+    String? url,
+    OnSuccess? onSuccess,
+    OnCancel? onCancel,
+    OnError? onError,
+  }) async {
     final Map<String, dynamic> params = <String, dynamic>{
       "quote": quote,
       "url": url,
-      "imageName": imageName,
-      "imageUrl": imageUrl
     };
-    final String? message =
-        await _channel.invokeMethod('shareToFacebook', params);
-    return message;
+
+    _channel.setMethodCallHandler((call) {
+      switch (call.method) {
+        case "onSuccess":
+          return onSuccess?.call(call.arguments) ?? Future.value();
+        case "onCancel":
+          return onCancel?.call() ?? Future.value();
+        case "onError":
+          return onError?.call(call.arguments) ?? Future.value();
+        default:
+          throw UnsupportedError("Unknown method called");
+      }
+    });
+    return _channel.invokeMethod('shareLinkToFacebook', params);
   }
 }
