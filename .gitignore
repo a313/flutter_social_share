@@ -3,3 +3,6 @@ android/.idea
 .dart_tool
 Podfile.lock
 .packages
+.idea
+.DS_Store
+libraries
